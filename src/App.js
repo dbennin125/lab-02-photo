@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
- import HEADER from './Header.js'
+import HEADER from './Header.js'
 import ImageItem from './ImageItem.js'
 import imageData from './data.js';
+import './App.css'
  
 
 // const images = {
@@ -25,11 +26,11 @@ export default class App extends Component {
          <HEADER />
         </header>
 
-      <main>
+      <main className="main">
         <section className="keyword" onChange={this.handleChange}>
           <select>
 
-          <option value="" defaultValue>
+          <option className="form-drop" value="" defaultValue>
             Horned Foes by species!
           </option>
           <option value="narwhal">Narwhals</option>
@@ -50,6 +51,7 @@ export default class App extends Component {
 
       </main> 
       
+      <section className="list-section">
 
       <ul className="keyword">
         {
@@ -63,10 +65,11 @@ export default class App extends Component {
           
           .map(whatever => {
             return<ImageItem creature={whatever} />
-
+            
           }) 
         }
       </ul>
+        </section>
 
       </div>
     )
